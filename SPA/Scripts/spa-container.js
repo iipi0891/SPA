@@ -1,6 +1,6 @@
 ﻿namespace("com.samplespa", function () {
 
-    this.container = function (keySelector) {
+    this.container = function () {
         var self = {};
 
         var currentPageId = ko.observable();

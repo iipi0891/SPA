@@ -15,6 +15,4 @@
 
     // set default page
     controller.show("page1");
-
-    _debug = controller;
 })();

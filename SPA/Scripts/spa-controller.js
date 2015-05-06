@@ -5,7 +5,7 @@
 
         var pageTypes = {};
 
-        var container = com.samplespa.container(function (page) { return page.id; });
+        var container = com.samplespa.container();
 
         function registerPage(pageType) {
             pageTypes[pageType.id] = pageType;
