@@ -1,4 +1,4 @@
-﻿namespace("com.travelalberta.pages", function () {
+﻿namespace("com.samplespa.pages", function () {
     this.page2 = function (controller) {
         function jump() {
             controller.show('page3');

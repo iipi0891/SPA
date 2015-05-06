@@ -3,14 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
+
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,17 +28,34 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
 
-    <div class="container body-content">
+    <div id="root" class="container body-content">
+
+        <div class="pageContainer" data-bind="template: { name: template, foreach: pages }">
+        </div>
+        
         @RenderBody()
+                
         <hr />
+
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
+    <!-- TEMPLATES -->
+    @RenderSection("Templates", false)
+
+    <!-- SCRIPTS -->
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/knockout-3.3.0.debug.js"></script>
+
+    <script src="~/Scripts/spa-common.js"></script>
+    <script src="~/Scripts/spa-container.js"></script>
+    <script src="~/Scripts/spa-controller.js"></script>
+
+    @RenderSection("Scripts", false)
 </body>
 </html>

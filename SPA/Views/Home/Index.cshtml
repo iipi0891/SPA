@@ -1,9 +1,16 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Home";
 }
 
-@RenderPage("~/Views/Home/Pages/_Page1.cshtml")
-@RenderPage("~/Views/Home/Pages/_Page2.cshtml")
-@RenderPage("~/Views/Home/Pages/_Page3.cshtml")
+@section Templates {
+    @RenderPage("~/Views/Home/Pages/_Page1.cshtml")
+    @RenderPage("~/Views/Home/Pages/_Page2.cshtml")
+    @RenderPage("~/Views/Home/Pages/_Page3.cshtml")
+}
 
+@section Scripts {
+    <script src="~/Scripts/Home/Pages/page1.js"></script>
+    <script src="~/Scripts/Home/Pages/page2.js"></script>
+    <script src="~/Scripts/Home/Pages/page3.js"></script>
+    <script src="~/Scripts/Home/home.js"></script>
+}

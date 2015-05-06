@@ -1,1 +1,4 @@
 packages/
+SPA/bin/
+SPA/obj
+SPA/obj/
